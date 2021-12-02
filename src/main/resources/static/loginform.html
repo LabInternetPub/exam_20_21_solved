@@ -1,0 +1,38 @@
+<!--
+TODO 7: Don't worry you won't need to touch the front-end
+    This is a form that performs the login. When the user logs in correctly, the jwt token in stored in the local storage handled by the browser.
+    From this moment on, the token can be retrieved from the storage and added to the authorization header to perform new calls to the API (via javascript).
+    Note that if you call the loginform.html in your browser and login with the default values, you'll be able to see the token from the
+    browser console with the sentence: localStorage.getItem('token');
+
+    Right now, it is working if called through the localhost as: http://localhost:8080/loginform.html
+    You must make it work also when called from the file system (or any other origin). For example go the your file browser, navigate to
+    yourproject/src/static/ and double-click the loginform.html file. Right now, it is not working when called from the file system
+    due to CORS issues.
+    You need to configure the cors to make it work!! (maybe in more than one file)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<form id="loginform">
+
+    <div class="form-label-group">
+        <label>User Name: </label><input type="text" id="inputName" value="Pepe">
+    </div>
+    <div class="form-label-group">
+        <label>Password:  </label><input type="password" id="inputPassword" value="password123">
+    </div>
+
+    <button  type="submit" id="submit">Sign in</button>
+</form>
+<script type="text/javascript" src="js/logUser.js"></script>
+</body>
+</html>
